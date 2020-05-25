@@ -1,0 +1,25 @@
+{
+  "name": "Servicenswlesson11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx mocha",
+    "pointers": "node .\\src\\VariablePointers.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnetteBrandTAFE/ServiceNSWLesson11.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnetteBrandTAFE/ServiceNSWLesson11/issues"
+  },
+  "homepage": "https://github.com/AnnetteBrandTAFE/ServiceNSWLesson11#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "mocha": "^7.2.0"
+  }
+}
