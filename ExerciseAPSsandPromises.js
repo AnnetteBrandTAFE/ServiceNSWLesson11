@@ -3,11 +3,6 @@
 
 // this was done in postman
 
-// Q2 Create a function that takes an argument that is a string representing a City and returns 
-// the OWN forecast5 result for that city.
-
-
-
 const readline = require('readline');
 const axios = require("axios");
 const { weatherApiKey } = require("./config/Keys");
@@ -27,17 +22,31 @@ function askQuestion(question) {
     });
 }
 
+// Q2 Create a function that takes an argument that is a string representing a City and returns 
+// the OWN forecast5 result for that city.
+
 async function Program() {
     let city = await askQuestion("Which City do you want the current weather for: ");
     let response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${weatherApiKey}`)
-    let focusedResponse = response.data.list
-    console.table (`The weather for the next five days is ${response.data.name} is ${response.data.main.temp_max - 273.1}`)
-    console.log(focusedResponse);
-    
+    for (let i = 0; i < response.data.list.length; i++) {
+    const temp = response.data.list[i].main.temp_max;
+    console.log(temp - 273.1);
+    }
+}
 
+// Q3 Make a console app that asks the user to enter a city and returns the 5 day forecast 
+// for that city. Make sure the temperature is in degrees celsius 
+// (Hint: don't log everything, try to keep it to the most relevant data).
+
+async function Program() {
+    let city = await askQuestion("Which City do you want the 5 day forecast for? ");
+    let response = await axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${weatherApiKey}`)
+    for (let i = 0; i < response.data.list.length; i++) {
+    const temp = response.data.list[i].main.temp_max;
+    console.log(temp - 273.1);
+    }
 }
 
 Program().then(() => {
     process.exit(0);
 });
-// Make a console app that asks the user to enter a city and returns the 5 day forecast for that city. Make sure the temperature is in degrees celsius (Hint: don't log everything, try to keep it to the most relevant data).

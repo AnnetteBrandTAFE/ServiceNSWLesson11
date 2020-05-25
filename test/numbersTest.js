@@ -34,7 +34,7 @@
 //     });
 // });
 
-//when running the terminal you need to call npx mocha
+// when running the terminal you need to call npx mocha
 // Output: 
 // testing the numbers module
 // testing the addNumbers function
